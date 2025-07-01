@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    background-color: #f8f9fa; 
+    color: #343a40;
+}
+
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: #212529;
+}
+
+h1 {
+    font-size: 2.8rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background-color: #007bff;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+p {
+    max-width: 600px;
+    margin: 0 auto; /* Paragraf menjadi di tengah */
+    color: #6c757d; /* Warna teks sekunder (abu-abu) */
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    margin-top: 25px;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px; /* Tombol menjadi oval */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+/* --- 3. HEADER & NAVIGASI --- */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Class 'scrolled' ini akan ditambahkan oleh JavaScript */
+header.scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #007bff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px; /* Jarak antar menu */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #343a40;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+    background-color: #e9ecef;
+}
+
+/* Class 'active' ini akan ditambahkan oleh JavaScript */
+nav ul li a.active {
+    color: #007bff;
+}
+
+
+/* --- 4. GAYA PER BAGIAN (SECTION) --- */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://source.unsplash.com/random/1600x900/?technology,abstract') no-repeat center center/cover;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 75%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+#hero h1 {
+    margin-bottom: 10px;
+}
+
+#skills {
+    background-color: #ffffff;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.skill-item {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    width: 120px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.skill-item img {
+    margin-bottom: 10px;
+}
+
+.skill-item p {
+    font-weight: 600;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#contact input:focus, #contact textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+#contact button {
+    align-self: center; /* Tombol kirim menjadi di tengah form */
+    border: none;
+    cursor: pointer;
+}
+
+
+/* --- 5. FOOTER --- */
+footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    text-align: center;
+    padding: 20px;
+}
+
+/* --- 6. RESPONSIVE DESIGN --- */
+
+/* Tampilan untuk Mobile (Layar kecil) */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+
+    /* Sembunyikan menu teks di mobile, siapkan untuk hamburger menu jika ingin dikembangkan */
+    nav ul {
+        /* Jika ingin menu hamburger, baris di bawah ini bisa diaktifkan */
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        padding: 20px;
+        transition: right 0.3s ease-in-out;
+        
+        
+        /* Untuk sekarang, kita buat menu lebih kecil dan rapat */
+        gap: 5px;
+    }
+
+    nav ul li a {
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+
+    nav {
+        padding: 1rem;
+    }
+}
+
+/* Tampilan untuk Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .skills-container {
+        max-width: 80%;
+        margin: 40px auto;
+    }
+}
+/* --- HAMBURGER MENU UNTUK MOBILE --- */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: #343a40;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Tampilkan tombol hamburger hanya di mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        padding: 20px;
+        gap: 10px;
+        transition: right 0.3s ease-in-out;
+    }
+
+    nav ul.show {
+        right: 0;
+    }
+}
